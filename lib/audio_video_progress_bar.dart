@@ -243,7 +243,7 @@ class ProgressBar extends LeafRenderObjectWidget {
 
   /// The [TextStyle] used by the time labels.
   ///
-  /// By default it is [TextTheme.bodyText1].
+  /// By default it is [TextTheme.bodyMedium].
   final TextStyle? timeLabelTextStyle;
 
   /// The extra space between the time labels and the progress bar.
@@ -256,7 +256,7 @@ class ProgressBar extends LeafRenderObjectWidget {
   _RenderProgressBar createRenderObject(BuildContext context) {
     final theme = Theme.of(context);
     final primaryColor = theme.colorScheme.primary;
-    final textStyle = timeLabelTextStyle ?? theme.textTheme.bodyText1;
+    final textStyle = timeLabelTextStyle ?? theme.textTheme.bodyMedium;
     return _RenderProgressBar(
       progress: progress,
       total: total,
@@ -288,7 +288,7 @@ class ProgressBar extends LeafRenderObjectWidget {
       BuildContext context, _RenderProgressBar renderObject) {
     final theme = Theme.of(context);
     final primaryColor = theme.colorScheme.primary;
-    final textStyle = timeLabelTextStyle ?? theme.textTheme.bodyText1;
+    final textStyle = timeLabelTextStyle ?? theme.textTheme.bodyMedium;
     renderObject
       ..progress = progress
       ..total = total
@@ -757,7 +757,7 @@ class _RenderProgressBar extends RenderBox {
   }
 
   /// The text style for the duration text labels. By default this style is
-  /// taken from the theme's [textStyle.bodyText1].
+  /// taken from the theme's [textStyle.bodyMedium].
   TextStyle? get timeLabelTextStyle => _timeLabelTextStyle;
   TextStyle? _timeLabelTextStyle;
   set timeLabelTextStyle(TextStyle? value) {
